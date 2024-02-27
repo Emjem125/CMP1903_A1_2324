@@ -1,20 +1,56 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Diagnostics;
 
-namespace CMP1903_A1_2324
+namespace Dice2
 {
-    internal class Testing
-    {
-        /*
-         * This class should test the Game and the Die class.
-         * Create a Game object, call the methods and compare their output to expected output.
-         * Create a Die object and call its method.
-         * Use debug.assert() to make the comparisons and tests.
-         */
+	public class Testing
+	{
+		public Testing()
+		{
+		}
 
-        //Method
+		//Tests that the Die runs
+        internal void Run()
+        {
+			CreateDie();
+			TestRollDie();
+        }
+
+		//Checks whether the Die is null or not
+		public void CreateDie()
+		{
+			Die testdie = new Die();
+			if(testdie == null)
+			{
+				throw new ArgumentNullException();
+			}
+		}
+		//Unit Test - Testing the Die Roll does not have the value 0.
+		public void TestRollDie()
+		{
+			//Arrange
+			Die testdie = new Die();
+			//Act
+			var result = testdie.Roll();
+			//Assert
+            Debug.Assert(result != 0);
+
+			/*if(result != 0)
+			{
+				throw new InvalidDiceException("Value is 0");
+			}*/
+
+		}
+		//Unit Test - Testing the Die Roll is below 7.
+		public void TestDice_WhenCallingRollMethod_ResultLessThanSeven()
+		{
+			//Arrange
+			Die testdie = new Die();
+			//Act 
+			var testresult = testdie.Roll();
+			//Assert
+			Debug.Assert(testresult<= 7);
+		}
     }
 }
+

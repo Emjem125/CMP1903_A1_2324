@@ -4,7 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CMP1903_A1_2324
+namespace Dice2
+
 {
     internal class Game
     {
@@ -16,6 +17,24 @@ namespace CMP1903_A1_2324
          */
 
         //Methods
+        public int DiceRolls()
+        {
+            //Calls for the Die Class for each Dice object
+            Die dice1 = new Die();
+            Die dice2 = new Die();
+            Die dice3 = new Die();
 
+            //Calls for the value stored and prints them for each dice object
+            Console.WriteLine(dice1.Roll());
+            Console.WriteLine(dice2.Roll());
+            Console.WriteLine(dice3.Roll());
+
+
+            //Adds each value from the 3 dice objects then displays it
+            int sum = dice1.DiceRoll + dice2.DiceRoll + dice3.DiceRoll;
+            Console.WriteLine("The total of all the rolls are:" + sum);
+            return sum;
+
+        }
     }
 }

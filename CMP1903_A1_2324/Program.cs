@@ -1,19 +1,34 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+namespace Dice2
+{ 
 
-namespace CMP1903_A1_2324
+class Program
 {
-    internal class Program
+    static void Main(string[] args)
+
     {
-        static void Main(string[] args)
+        try
         {
-            /*
-             * Create a Game object and call its methods.
-             * Create a Testing object to verify the output and operation of the other classes.
-             */
+            //RunTests();
+            Game Playgame = new Game();
+            Playgame.DiceRolls();
         }
+        /*catch(InvalidDiceException e)
+        {
+            Console.WriteLine($"There is an issue {e}");
+        }*/
+        catch (Exception e)
+        {
+            Console.WriteLine(e.Message);
+        }
+
+        Console.ReadKey();
     }
+
+    private static void RunTests()
+    {
+        Testing dieTests = new Testing();
+        dieTests.Run();
+    }
+}
 }
