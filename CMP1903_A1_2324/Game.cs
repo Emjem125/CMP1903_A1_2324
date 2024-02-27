@@ -17,7 +17,7 @@ namespace Dice2
          */
 
         //Methods
-        public int DiceRolls()
+        public int Roll()
         {
             //Calls for the Die Class for each Dice object
             Die dice1 = new Die();
@@ -25,9 +25,9 @@ namespace Dice2
             Die dice3 = new Die();
 
             //Calls for the value stored and prints them for each dice object
-            Console.WriteLine(dice1.Roll());
-            Console.WriteLine(dice2.Roll());
-            Console.WriteLine(dice3.Roll());
+            Console.WriteLine(dice1.Rolls());
+            Console.WriteLine(dice2.Rolls());
+            Console.WriteLine(dice3.Rolls());
 
 
             //Adds each value from the 3 dice objects then displays it

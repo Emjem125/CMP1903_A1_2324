@@ -31,7 +31,7 @@ namespace Dice2
 			//Arrange
 			Die testdie = new Die();
 			//Act
-			var result = testdie.Roll();
+			var result = testdie.Rolls();
 			//Assert
             Debug.Assert(result != 0);
 
@@ -47,7 +47,7 @@ namespace Dice2
 			//Arrange
 			Die testdie = new Die();
 			//Act 
-			var testresult = testdie.Roll();
+			var testresult = testdie.Rolls();
 			//Assert
 			Debug.Assert(testresult<= 7);
 		}

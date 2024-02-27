@@ -15,7 +15,7 @@ namespace Dice2
 		{
 		}
 
-		public int Roll()
+		public int Rolls()
 		{
 			//Randomises roll to get number from 1 to 6.
 			Random roll = new Random();

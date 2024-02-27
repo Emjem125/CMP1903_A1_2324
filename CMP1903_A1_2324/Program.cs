@@ -10,8 +10,8 @@ class Program
         try
         {
             //RunTests();
-            Game Playgame = new Game();
-            Playgame.DiceRolls();
+            Game Dice = new Game();
+            Dice.Roll();
         }
         /*catch(InvalidDiceException e)
         {
