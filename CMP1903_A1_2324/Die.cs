@@ -17,6 +17,7 @@ namespace Dice2
 
 		public int Roll()
 		{
+			//Randomises roll to get number from 1 to 6.
 			Random roll = new Random();
             DiceRoll = roll.Next(1, 7);
             return DiceRoll;

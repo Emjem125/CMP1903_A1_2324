@@ -8,12 +8,12 @@ class Program
         try
         {
             //RunTests();
-            Game Sid = new Game();
-            Sid.DiceRolls();
+            Game Playgame = new Game();
+            Playgame.DiceRolls();
         }
         catch(InvalidDiceException e)
         {
-            Console.WriteLine($"You did something stupid {e}");
+            Console.WriteLine($"There is an issue {e}");
         }
         catch(Exception e)
         {

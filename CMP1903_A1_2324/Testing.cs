@@ -9,12 +9,14 @@ namespace Dice2
 		{
 		}
 
+		//Tests that the Die runs
         internal void Run()
         {
 			CreateDie();
 			TestRollDie();
         }
 
+		//Checks whether the Die is null or not
 		public void CreateDie()
 		{
 			Die testdie = new Die();
@@ -23,10 +25,14 @@ namespace Dice2
 				throw new ArgumentNullException();
 			}
 		}
+		//Unit Test - Testing the Die Roll does not have the value 0.
 		public void TestRollDie()
 		{
+			//Arrange
 			Die testdie = new Die();
+			//Act
 			var result = testdie.Roll();
+			//Assert
             Debug.Assert(result != 0);
 
 			/*if(result != 0)
@@ -34,6 +40,16 @@ namespace Dice2
 				throw new InvalidDiceException("Value is 0");
 			}*/
 
+		}
+		//Unit Test - Testing the Die Roll is below 7.
+		public void TestDice_WhenCallingRollMethod_ResultLessThanSeven()
+		{
+			//Arrange
+			Die testdie = new Die();
+			//Act 
+			var testresult = testdie.Roll();
+			//Assert
+			Debug.Assert(testresult<= 7);
 		}
     }
 }
