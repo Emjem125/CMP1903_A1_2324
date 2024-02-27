@@ -1,4 +1,6 @@
-﻿namespace Dice2;
+﻿using System;
+namespace Dice2
+{ 
 
 class Program
 {
@@ -11,11 +13,11 @@ class Program
             Game Playgame = new Game();
             Playgame.DiceRolls();
         }
-        catch(InvalidDiceException e)
+        /*catch(InvalidDiceException e)
         {
             Console.WriteLine($"There is an issue {e}");
-        }
-        catch(Exception e)
+        }*/
+        catch (Exception e)
         {
             Console.WriteLine(e.Message);
         }
@@ -29,4 +31,4 @@ class Program
         dieTests.Run();
     }
 }
-
+}
