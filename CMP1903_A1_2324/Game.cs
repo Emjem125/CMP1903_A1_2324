@@ -17,6 +17,24 @@ namespace Dice2
          */
 
         //Methods
-      
+        public int Roll()
+        {
+            //Calls for the Die Class for each Dice object
+            Die dice1 = new Die();
+            Die dice2 = new Die();
+            Die dice3 = new Die();
+
+            //Calls for the value stored and prints them for each dice object
+            Console.WriteLine(dice1.Rolls());
+            Console.WriteLine(dice2.Rolls());
+            Console.WriteLine(dice3.Rolls());
+
+
+            //Adds each value from the 3 dice objects then displays it
+            int sum = dice1.DiceRoll + dice2.DiceRoll + dice3.DiceRoll;
+            Console.WriteLine("The total of all the rolls are:" + sum);
+            return sum;
+
+        }
     }
 }
