@@ -1,10 +1,33 @@
 ﻿using System;
-namespace Dice2
+namespace CMP1903_A1_2324
 { 
 
-class Program
+internal class Program
 {
-        static void Main(string[] args);
+    static void Main(string[] args)
 
-   
+    {
+        
+        try
+        {
+            RunTests();
+            Game Dice = new Game();
+            Dice.Roll();
+        }
+        
+        catch (Exception e)
+        {
+            Console.WriteLine(e.Message);
+        }
+
+        void RunTests()
+            {
+                Testing dieTests = new Testing();
+                dieTests.Run();
+        }
+            Console.ReadKey();
+    }
+
+    
+}
 }
