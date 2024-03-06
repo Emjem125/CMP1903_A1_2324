@@ -3,11 +3,13 @@ namespace CMP1903_A1_2324
 {
 	internal class Die
 	{
+		private int _diceRoll;
+
 		//Property
 		public int DiceRoll
 		{
-			get;
-			set;
+			get { return _diceRoll; }
+			set {  _diceRoll = value; }
 		}
 
 		//Method
