@@ -4,17 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Dice2
+namespace CMP1903_A1_2324
 
 {
     internal class Game
     {
-        /*
-         * The Game class should create three die objects, roll them, sum and report the total of the three dice rolls.
-         *
-         * EXTRA: For extra requirements (these aren't required though), the dice rolls could be managed so that the
-         * rolls could be continous, and the totals and other statistics could be summarised for example.
-         */
+
 
         //Methods
         public int Roll()
@@ -25,15 +20,21 @@ namespace Dice2
             Die dice3 = new Die();
 
             //Calls for the value stored and prints them for each dice object
-            Console.WriteLine(dice1.Rolls());
-            Console.WriteLine(dice2.Rolls());
-            Console.WriteLine(dice3.Rolls());
-
+            Console.WriteLine($"Dice 1 rolled a " + dice1.Rolls());
+            Console.WriteLine($"Dice 2 rolled a " + dice2.Rolls());
+            Console.WriteLine($"Dice 3 rolled a " + dice3.Rolls());
 
             //Adds each value from the 3 dice objects then displays it
-            int sum = dice1.DiceRoll + dice2.DiceRoll + dice3.DiceRoll;
-            Console.WriteLine("The total of all the rolls are:" + sum);
-            return sum;
+            int Sum = dice1.DiceRoll + dice2.DiceRoll + dice3.DiceRoll;
+            Console.WriteLine("The total of all the rolls are:" + Sum);
+            return Sum;
+        }
+
+         public int Sum 
+        {
+
+            get;
+            set;
 
         }
     }

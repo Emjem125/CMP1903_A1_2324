@@ -1,26 +1,27 @@
 ﻿using System;
 using System.Diagnostics;
 
-namespace Dice2
+namespace CMP1903_A1_2324
 {
 	public class Testing
 	{
-		public Testing()
-		{
-		}
 
-		//Tests that the Die runs
-        internal void Run()
-        {
+		//Tests that the Die and Game runs
+		internal void Run()
+		{
 			CreateDie();
 			TestRollDie();
-        }
+			TestDiceRange();
+			CreateGame();
+
+		}
+
 
 		//Checks whether the Die is null or not
 		public void CreateDie()
 		{
 			Die testdie = new Die();
-			if(testdie == null)
+			if (testdie == null)
 			{
 				throw new ArgumentNullException();
 			}
@@ -29,28 +30,42 @@ namespace Dice2
 		public void TestRollDie()
 		{
 			//Arrange
-			Die testdie = new Die();
+			Die testDie = new Die();
 			//Act
-			var result = testdie.Rolls();
+			var result = testDie.Rolls();
 			//Assert
-            Debug.Assert(result != 0);
-
-			/*if(result != 0)
-			{
-				throw new InvalidDiceException("Value is 0");
-			}*/
-
+			Debug.Assert(result != 0);
 		}
 		//Unit Test - Testing the Die Roll is below 7.
-		public void TestDice_WhenCallingRollMethod_ResultLessThanSeven()
+		public void TestDiceRange()
 		{
 			//Arrange
-			Die testdie = new Die();
+			Die testDie = new Die();
 			//Act 
-			var testresult = testdie.Rolls();
+			var testResult = testDie.Rolls();
 			//Assert
-			Debug.Assert(testresult<= 7);
-		}
-    }
-}
+			Debug.Assert(testResult > 0 && testResult < 7);
+			Debug.Assert(testResult >= 1 && testResult <= 6);
 
+
+
+		}
+		//Checks whether the Game is null or not
+		public void CreateGame()
+		{
+			Game testGame = new Game();
+			if (testGame == null)
+			{
+				throw new ArgumentNullException();
+			}
+		}
+
+		public void TestSum()
+		{
+			Game testSum = new Game();
+			Debug.Assert(testSum.Sum > 3 && testSum.Sum < 18);
+
+
+		}
+	}
+}
